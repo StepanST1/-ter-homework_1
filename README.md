@@ -12,6 +12,7 @@
 1. Скачайте и установите **Terraform** версии >=1.12.0 . Приложите скриншот вывода команды ```terraform --version```.
 2. Скачайте на свой ПК этот git-репозиторий. Исходный код для выполнения задания расположен в директории **01/src**.
 3. Убедитесь, что в вашей ОС установлен docker.
+
 ![TASK0](/img/Screenshot_2.png)
 ------
 
@@ -39,24 +40,23 @@
 
 ------
 
-1. ![TASK1](/img/Screenshot_1.png)
-2. personal.auto.tfvars
-3.  "result": "HAPA5Vyr5y8I9I9z"
-4. Ошибка1: Согласно документации объявление resource должно быть:
+1. ![TASK1](/img/Screenshot_3.png)
+2. `personal.auto.tfvars`
+3.  `"result": "HAPA5Vyr5y8I9I9z"`
+4. `Ошибка1: Согласно документации объявление resource должно быть:
 resource "<TYPE>" "<LABEL>"  не хватает имени.
-resource "docker_image" "nginx'  { 
+resource "docker_image" "nginx'  {`
 
-Ошибка2: Согласно документации имя для объекта не должно начинаться с цифры
-resource "docker_container" "nginx" {
+`Ошибка2: Согласно документации имя для объекта не должно начинаться с цифры
+resource "docker_container" "nginx" {`
 
-Ошибка3: name  = "example_${random_password.random_string_FAKE.resulT}"
-
+`Ошибка3: name  = "example_${random_password.random_string_FAKE.resulT}"
 Здесь допущена опечатка в атрибутах ресурса random_password.
+name  = "example_${random_password.random_string.result}"`
 
-name  = "example_${random_password.random_string.result}"
 5. ![TASK5](/img/Screenshot_5.png)
 6. ![TASK6](/img/Screenshot_6.png)
 `Опасность ключа -auto-approve Этот флаг обходит обязательный шаг ручного подтверждения плана изменений, показанного Terraform перед применением. В результате можно случайно уничтожить ресурсы (например, удалить базу данных), внести нежелательные модификации или потерять данные из-за ошибок в конфигурации, не успев их заметить. Особенно рискованно в production-средах, где изменения влияют на реальную инфраструктуру.
 Зачем нужен ключ: Он упрощает автоматизацию: идеален для CI/CD-пайплайнов, скриптов и неинтерактивных окружений (dev/test), где ручное подтверждение замедляет процесс.`
 7. ![TASK8](/img/Screenshot_8.png)
-8. из за ключа   keep_locally = true образ хранится в docker image
+8. `из за ключа   keep_locally = true образ хранится в docker image`
